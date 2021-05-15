@@ -14,7 +14,7 @@ Originally authored by [@tcsstool](https://twitter.com/tcstoolHax0r) and now mai
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=xSFi-jxOBwM" target="_blank"><img src="http://img.youtube.com/vi/xSFi-jxOBwM/0.jpg" alt="NoSQLMap MongoDB Management Attack Demo" width="240" height="180" border="10" /></a> 
 
 ## Screenshots
-![NoSQLMap](https://github.com/codingo/NoSQLMap/blob/master/screenshots/NoSQLMap-v0-5.jpg)
+![NoSQLMap](https://github.com/netslutter/NoSQLMap/blob/master/screenshots/NoSQLMap-v0-5.jpg)
 
 # Summary
 ## What is NoSQL?
