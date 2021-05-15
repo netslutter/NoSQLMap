@@ -78,5 +78,3 @@ Explanation of options:
 9. Save options file-Save settings 1-6 for future use.
 x. Back to main menu-Use this once the options are set to start your attacks.
 ```
-
-Once options are set head back to the main menu and select DB access attacks or web app attacks as appropriate for whether you are attacking a NoSQL management port or web application. The rest of the tool is "wizard" based and fairly self explanatory, but send emails to codingo@protonmail.com or find me on Twitter [@codingo_](https://twitter.com/codingo_) if you have any questions or suggestions. 
