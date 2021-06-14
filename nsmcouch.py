@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# NoSQLMap Copyright 2012-2017 NoSQLMap Development team
+# NoSQLMap Copyright 2012-2021 NoSQLMap Development team
 # See the file 'doc/COPYING' for copying permission
 
 from exception import NoSQLMapException
@@ -94,7 +94,7 @@ def netAttacks(target,port, myIP, args = None):
                 mgtOpen = True
 
             except NoSQLMapException:
-                raw_input("Failed to authenticate.  Press enter to continue...")
+                raw_input("Failed to authenticate. Press enter to continue...")
                 return
 
     elif needCreds[0] == 2:
@@ -103,7 +103,7 @@ def netAttacks(target,port, myIP, args = None):
         mgtOpen = True
 
     elif needCreds[0] == 3:
-        raw_input ("Couldn't connect to CouchDB server.  Press enter to return to the main menu.")
+        raw_input ("Couldn't connect to CouchDB server. Press enter to return to the main menu.")
         return
 
 
@@ -112,7 +112,7 @@ def netAttacks(target,port, myIP, args = None):
     try:
         mgtRespCode = urllib.urlopen(mgtUrl).getcode()
         if mgtRespCode == 200:
-            print "Sofa web management open at " + mgtUrl + ".  No authentication required!"
+            print "Sofa web management open at " + mgtUrl + ". No authentication required!"
 
     except NoSQLMapException:
         print "Sofa web management closed or requires authentication."
@@ -181,7 +181,7 @@ def enumDbs (couchConn,target,port):
             print "\n"
 
     except NoSQLMapException:
-            print "Error:  Couldn't list databases.  The provided credentials may not have rights."
+            print "Error:  Couldn't list databases. The provided credentials may not have rights."
 
     if '_users' in dbList:
         r = requests.get("http://" + target + ":" + str(port) + "/_users/_all_docs?startkey=\"org.couchdb.user\"&include_docs=true")
@@ -224,7 +224,7 @@ def stealDBs (myDB,couchConn,target,port):
         dbList.append(db)
 
     if len(dbList) == 0:
-        print "Can't get a list of databases to steal.  The provided credentials may not have rights."
+        print "Can't get a list of databases to steal. The provided credentials may not have rights."
         return
 
     for dbName in dbList:
@@ -255,7 +255,7 @@ def stealDBs (myDB,couchConn,target,port):
             return
 
     except NoSQLMapException:
-        raw_input ("Something went wrong.  Are you sure your CouchDB is running and options are set? Press enter to return...")
+        raw_input ("Something went wrong. Are you sure your CouchDB is running and options are set? Press enter to return...")
         return
 
 
