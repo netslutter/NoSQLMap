@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# NoSQLMap Copyright 2012-2017 NoSQLMap Development team
+# NoSQLMap Copyright 2012-2021 NoSQLMap Development team
 # See the file 'doc/COPYING' for copying permission
 
 
@@ -43,7 +43,7 @@ def massScan(platform, args = None):
                     ipList.append(str(ip))
                 optCheck = False
             except NoSQLMapException:
-                raw_input("Not a valid subnet.  Press enter to return to main menu.")
+                raw_input("Not a valid subnet. Press enter to return to main menu.")
                 return
 
         if loadOpt == "2":
