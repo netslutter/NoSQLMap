@@ -1,5 +1,5 @@
 #!/usr/bin/python
-# NoSQLMap Copyright 2012-2017 NoSQLMap Development team
+# NoSQLMap Copyright 2012-2021 NoSQLMap Development team
 # See the file 'doc/COPYING' for copying permission
 
 from exception import NoSQLMapException
@@ -70,7 +70,7 @@ def netAttacks(target, dbPort, myIP, myPort, args = None):
     try:
         mgtRespCode = urllib.urlopen(mgtUrl).getcode()
         if mgtRespCode == 200:
-            print "MongoDB web management open at " + mgtUrl + ".  No authentication required!"
+            print "MongoDB web management open at " + mgtUrl + ". No authentication required!"
             testRest = raw_input("Start tests for REST Interface (y/n)? ")
 
         if testRest in yes_tag:
@@ -140,7 +140,7 @@ def stealDBs(myDB,victim,mongoConn):
     menuItem = 1
 
     if len(dbList) == 0:
-        print "Can't get a list of databases to steal.  The provided credentials may not have rights."
+        print "Can't get a list of databases to steal. The provided credentials may not have rights."
         return
 
     for dbName in dbList:
@@ -305,7 +305,7 @@ def enumDbs (mongoConn):
         print "\n"
 
     except NoSQLMapException:
-        print "Error:  Couldn't list databases.  The provided credentials may not have rights."
+        print "Error:  Couldn't list databases. The provided credentials may not have rights."
 
     print "List of collections:"
 
@@ -331,7 +331,7 @@ def enumDbs (mongoConn):
 
     except NoSQLMapException, e:
         print e
-        print "Error:  Couldn't list collections.  The provided credentials may not have rights."
+        print "Error:  Couldn't list collections. The provided credentials may not have rights."
 
     print "\n"
     return
